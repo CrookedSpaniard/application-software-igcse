@@ -1,3 +1,5 @@
+/* The stage is a size container so scene layouts follow its width, not the window. */
+.stage { container: stage / inline-size; }
 /* ======================================================================
    Application software: styles for the scene simulations
    ====================================================================== */
@@ -25,8 +27,8 @@
 .win { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .win-bar { display: flex; align-items: center; gap: .5rem; background: var(--surface-2); border-bottom: 1px solid var(--line); padding: .35rem .6rem; font-size: .8rem; font-weight: 700; color: var(--muted); }
 .win-bar::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: #ff6b6b; box-shadow: .85rem 0 0 #fcc419, 1.7rem 0 0 #51cf66; margin-right: 1.9rem; }
-.win-body { padding: .7rem .8rem; display: grid; gap: .5rem; font-size: .9rem; }
-.url { display: flex; align-items: center; gap: .35rem; flex: 1; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .2rem .7rem; font: 600 .82rem ui-monospace, Menlo, monospace; color: var(--ink); min-width: 0; overflow: hidden; white-space: nowrap; }
+.win-body { padding: .7rem .8rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: .5rem; font-size: .9rem; }
+.url { display: flex; align-items: center; gap: .35rem; flex: 1; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: .2rem .7rem; font: 600 .82rem ui-monospace, Menlo, monospace; color: var(--ink); min-width: 0; word-break: break-all; line-height: 1.35; }
 .url .ic { width: .95rem; height: .95rem; }
 .url.safe .ic { color: var(--good); }
 .url.risky .ic { color: var(--bad); }
@@ -72,6 +74,7 @@ button.sto-it:hover { border-color: var(--scene); }
 
 /* ---------- 1 · apps ---------- */
 .ap-prods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; margin-bottom: .5rem; }
+@container stage (max-width: 40rem) { .ap-prods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .ap-prod { display: grid; justify-items: center; gap: .1rem; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: .45rem; font: inherit; font-size: .82rem; font-weight: 650; color: var(--ink); cursor: pointer; }
 .ap-prod span { font-size: 1.5rem; }
 .ap-prod.on { border-color: var(--scene); box-shadow: 0 0 0 3px color-mix(in srgb, var(--scene) 25%, transparent); }
@@ -83,11 +86,16 @@ button.sto-it:hover { border-color: var(--scene); }
 .ap-sub { display: grid; gap: .35rem; margin-bottom: .4rem; }
 .ap-scan { display: grid; gap: .35rem; min-height: 4.5rem; align-content: start; }
 .ap-app { font-weight: 800; }
-.ap-shelf { display: grid; gap: .35rem; min-height: 3rem; }
+.ap-shelf { display: grid; gap: .35rem; min-height: 3rem; container-type: inline-size; }
 .ap-item { display: grid; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto; column-gap: .5rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .35rem .5rem; }
 .ap-item > span { grid-row: span 2; font-size: 1.5rem; }
 .ap-item small { color: var(--muted); grid-column: 2; }
 .ap-item .mini-btn { grid-column: 3; grid-row: 1 / span 2; }
+@container (max-width: 14rem) {
+  .ap-item { grid-template-columns: auto minmax(0, 1fr); }
+  .ap-item > span { grid-row: span 3; }
+  .ap-item .mini-btn { grid-column: 2; grid-row: 3; justify-self: start; margin-top: .2rem; }
+}
 .ap-phone { display: grid; gap: .4rem; }
 .ap-home { display: flex; flex-wrap: wrap; gap: .5rem; background: var(--navy); border-radius: 14px; padding: .7rem; min-height: 4.6rem; }
 .ap-ic { display: grid; justify-items: center; font-size: 1.7rem; color: #fff; width: 4.5rem; }
@@ -106,7 +114,7 @@ button.sto-it:hover { border-color: var(--scene); }
 /* ---------- 2 · word processing and DTP ---------- */
 .of-suite { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
 @media (max-width: 760px) { .of-suite { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.of-rib { display: flex; gap: .5rem; padding: .25rem .5rem; font-size: .7rem; font-weight: 700; background: var(--navy-2); color: #fff; }
+.of-rib { display: flex; flex-wrap: wrap; gap: 0 .5rem; padding: .25rem .5rem; font-size: .7rem; font-weight: 700; background: var(--navy-2); color: #fff; }
 .of-body { padding: .5rem; min-height: 6rem; display: grid; gap: .3rem; align-content: start; }
 .of-l { height: .45rem; background: var(--line); border-radius: 4px; margin: 0; }
 .of-l.w70 { width: 70%; } .of-l.w50 { width: 50%; }
@@ -173,6 +181,7 @@ del { color: #e03131; }
 /* ---------- 4 · databases ---------- */
 .db-main { display: grid; grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: .7rem; align-items: start; }
 @media (max-width: 800px) { .db-main { grid-template-columns: 1fr; } }
+@container stage (max-width: 40rem) { .db-main { grid-template-columns: 1fr; } }
 .db-form, .db-q { display: grid; gap: .45rem; }
 .db-form label, .db-q label { display: grid; gap: .15rem; font-size: .82rem; font-weight: 700; }
 .db-q label:nth-of-type(2) { grid-template-columns: 1fr 5rem; }

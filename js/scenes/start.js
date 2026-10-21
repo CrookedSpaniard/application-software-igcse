@@ -32,7 +32,7 @@ FD.add({
           </div>
         </div>
         <svg class="st-net st-flow" viewBox="0 0 420 230" role="img" aria-label="Twelve kinds of application software">
-          <g><rect class="nd" x="10" y="8" width="127" height="46" rx="10"><animate attributeName="fill" values="rgb(255 255 255 / .07);rgb(246 201 76 / .35);rgb(255 255 255 / .07)" dur="12s" begin="0s" repeatCount="indefinite"/></rect><text x="73.5" y="36">📝 Word processing</text></g>
+          <g><rect class="nd" x="10" y="8" width="127" height="46" rx="10"><animate attributeName="fill" values="rgb(255 255 255 / .07);rgb(246 201 76 / .35);rgb(255 255 255 / .07)" dur="12s" begin="0s" repeatCount="indefinite"/></rect><text x="73.5" y="27">📝 Word<tspan x="73.5" dy="16">processing</tspan></text></g>
           <g><rect class="nd" x="147" y="8" width="127" height="46" rx="10"><animate attributeName="fill" values="rgb(255 255 255 / .07);rgb(246 201 76 / .35);rgb(255 255 255 / .07)" dur="12s" begin="1s" repeatCount="indefinite"/></rect><text x="210.5" y="36">📰 DTP</text></g>
           <g><rect class="nd" x="284" y="8" width="127" height="46" rx="10"><animate attributeName="fill" values="rgb(255 255 255 / .07);rgb(246 201 76 / .35);rgb(255 255 255 / .07)" dur="12s" begin="2s" repeatCount="indefinite"/></rect><text x="347.5" y="36">📊 Spreadsheet</text></g>
           <g><rect class="nd" x="10" y="63" width="127" height="46" rx="10"><animate attributeName="fill" values="rgb(255 255 255 / .07);rgb(246 201 76 / .35);rgb(255 255 255 / .07)" dur="12s" begin="3s" repeatCount="indefinite"/></rect><text x="73.5" y="91">🗃️ Database</text></g>
