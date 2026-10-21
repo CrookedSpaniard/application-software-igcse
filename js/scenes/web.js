@@ -67,7 +67,7 @@ FD.add({
     const show = FD.panels(root, (p) => { if (p === 'browser') browserReset(); });
 
     const html = () => `<!DOCTYPE html>\n<html>\n<head>\n  <title>Eco Club</title>\n</head>\n<body>\n${page.map(([k, x]) => BLOCKS[k].c(x).split('\n').map((l) => '  ' + l).join('\n')).join('\n')}\n</body>\n</html>`;
-    const hl = (s) => FD.esc(s).replace(/(&lt;\/?)([a-z0-9!]+)/gi, '$1<b class="tg">$2</b>').replace(/(\w+)=(&quot;[^&]*&quot;)/g, '<i>$1</i>=<u>$2</u>');
+    const hl = (s) => FD.esc(s).replace(/(&lt;\/?)([a-z0-9!]+)/gi, '$1<b class="wb-tg">$2</b>').replace(/(\w+)=(&quot;[^&]*&quot;)/g, '<i>$1</i>=<u>$2</u>');
     function render(flash) {
       $('#dz').innerHTML = page.map(([k, x], i) => `<div class="wb-blk ${i === flash ? 'new' : ''}" data-i="${i}">${BLOCKS[k].d(x)}</div>`).join('') || '<p class="note">Empty page: add something from the toolbar.</p>';
       $('#code').innerHTML = hl(html());
