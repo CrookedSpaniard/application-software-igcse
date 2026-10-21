@@ -1,0 +1,28 @@
+FD.test({
+  id: 'testA',
+  part: 'A',
+  Q: [
+    ['apps', 'What does application software let users do?', ['Produce a digital product or carry out specific tasks not related to the operating system', 'Control and manage the computer’s hardware', 'Defragment the hard disk', 'Allocate memory to programs'], 'For example, a presentation or an image.', 'apps'],
+    ['apps', 'Before some app stores make an app available, they…', ['check its quality and that it has no code that will harm a device or data', 'make it free of charge', 'print a copy of its code', 'delete older apps'], 'Apps can also be installed from storage media like DVDs.', 'apps'],
+    ['office', 'Which feature lets several people give feedback on a document?', ['Comments', 'Cropping', 'Normalisation', 'Mute'], 'Track changes lets others accept or reject edits.', 'office'],
+    ['office', 'A school wants a newsletter with columns, images and a complicated page layout. Which software is most suitable?', ['Desktop publishing (DTP)', 'Spreadsheet', 'Database', 'Sound editing'], 'DTP is designed for complicated page layouts.', 'office'],
+    ['office', 'What is a <b>hyperlink</b>?', ['A link that can be clicked to go to another location', 'A type of font', 'A table in a document', 'A spelling error'], 'Often a web page on the internet.', 'office'],
+    ['spreadsheet', 'Which type of software is best for answering ‘what if?’ questions about money?', ['Spreadsheet', 'Word processing', 'Web authoring', 'Presentation'], 'Formulae recalculate automatically when values change.', 'spreadsheet'],
+    ['database', 'Which DBMS feature selects all data that meets certain criteria?', ['A query editor', 'A data entry form', 'A report builder', 'A spell checker'], 'Forms input data; reports display it in a readable format.', 'database'],
+    ['database', 'What is a DBMS used for?', ['Entering, editing and searching data', 'Editing photographs', 'Moving a robotic arm', 'Sending SMS messages'], 'Database management system.', 'database'],
+    ['web', 'What is the output of web authoring software?', ['Web pages in HTML', 'Spreadsheets', 'Audio files', 'SMS messages'], 'HTML is read by web browser software.', 'web'],
+    ['web', 'A web server…', ['stores web pages and sends them to devices that request them', 'translates HTML into pages', 'is a network only inside a company', 'is a type of WYSIWYG editor'], 'An intranet is used within a company.', 'web'],
+    ['image', 'Which is a <b>bitmap</b> image?', ['A digital photograph', 'A logo made of points and lines', 'An HTML page', 'A spreadsheet formula'], 'A bitmap is stored as an arrangement of bits.', 'image'],
+    ['image', 'Which is a feature of a <b>graphics editor</b> rather than a photo editor?', ['Vectorising images', 'Red-eye removal', 'Adjusting brightness', 'Cropping'], 'Graphics editors work with vector graphics.', 'image'],
+    ['sound', 'What does <b>solo</b> do in sound editing software?', ['Only plays one particular audio track', 'Silences an audio track', 'Changes the speed of a track', 'Prolongs a sound'], 'Mute silences a track.', 'sound'],
+    ['sound', 'Which is <b>not</b> a type of audio processing?', ['Cropping', 'Reverse', 'Noise reduction', 'Normalisation'], 'Cropping removes the edges of an image.', 'sound'],
+    ['present', 'What is a <b>slide</b>?', ['A single page of a presentation', 'The route through a series of slides', 'A note for the presenter', 'A recorded narration'], 'A pathway is the sequence of slides.', 'present'],
+  ],
+  LONG: [
+    { q: 'State what is meant by the term ‘application software’. <small>(Chapter question 1)</small>', m: 1, s: ['Software that allows users to produce a digital product / carry out specific tasks that are not related to the operating system (1).'], link: ['apps', 'See apps again'] },
+    { q: 'Describe how presentation software can help a presenter to give a talk. <small>(Chapter question 6)</small>', m: 2, s: ['Slides / pathways illustrate and support the spoken content (1).', 'Notes remind and prompt the presenter about specific points (1).', 'Slides can advance on command or automatically / timings can be practised (1).', 'Narration can play back automatically on the right slides (1).', 'Max 2.'], link: ['present', 'See presentation software again'] },
+    { q: 'A student is writing an essay with a partner. Describe <b>two</b> features of word processing software that help them work together.', m: 4, s: ['Comments (1) can be added so the other person understands the writer’s intention / gives feedback (1).', 'Track changes (1) shows the changes made so the other person can accept or reject them (1).'], link: ['office', 'See word processing again'] },
+    { q: 'A club treasurer wants to know the ticket price if fewer people come to an event. Explain why a spreadsheet is suitable.', m: 3, s: ['Formulae and functions perform calculations automatically (1).', 'When a value (number of guests) is changed, the results are recalculated (1).', 'This lets the treasurer model scenarios / answer ‘what if?’ questions (1).', 'Max 3.'], link: ['spreadsheet', 'See spreadsheets again'] },
+    { q: 'Describe <b>three</b> features of database management system (DBMS) software.', m: 3, s: ['Data entry forms, so users can input data (1).', 'Query editors, so users can select all data that meets certain criteria (1).', 'Report builders, so users can display data in a more readable format (1).'], link: ['database', 'See databases again'] },
+  ],
+});
